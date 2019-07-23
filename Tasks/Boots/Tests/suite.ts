@@ -22,7 +22,6 @@ describe('Sample task tests', function () {
         assert.equal(tr.succeeded, false, 'should have failed');
         assert.equal(tr.warningIssues, 0, "should have no warnings");
         assert.equal(tr.errorIssues.length, 1, "should have 1 error issue");
-        console.log(tr.stdout);
         done();
     });  
 
