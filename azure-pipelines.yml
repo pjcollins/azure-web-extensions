@@ -9,7 +9,7 @@ variables:
 jobs:
 - job: build_test_win
   displayName: Build and Test on Windows
-  pool: windows-2019
+  pool: Hosted Windows 2019 with VS2019
   timeoutInMinutes: 60
   cancelTimeoutInMinutes: 5
   steps:
