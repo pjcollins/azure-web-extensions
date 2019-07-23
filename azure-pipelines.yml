@@ -19,6 +19,12 @@ jobs:
       versionSpec: 10.x
 
   - task: Npm@1
+    displayName: install mocha
+    inputs:
+      command: custom
+      customCommand: install mocha -g
+
+  - task: Npm@1
     displayName: boots - npm install
     inputs:
       command: install

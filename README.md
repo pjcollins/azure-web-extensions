@@ -12,6 +12,8 @@ TODO
  * Install [Node](https://nodejs.org/).
  * Install the TypeScript Compiler.
     * `npm install -g typescript`
+ * Install Mocha for testing.
+    * `npm install -g mocha`
 
 #### Building
 Open a terminal and navigate to the task directory you want to work on, and run the following commands.
