@@ -24,7 +24,7 @@ jobs:
       command: install
       workingDir: $(BootsDir)
 
-  - script: tcs
+  - script: tsc
     displayName: boots - compile typescript
     workingDirectory: $(BootsDir)
 
