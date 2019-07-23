@@ -1,19 +1,55 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# Pipeline for azure-web-extensions
 
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+variables:
+  BootsDir: $(System.DefaultWorkingDirectory)\Tasks\Boots
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+jobs:
+- job: build_test_win
+  displayName: Build and Test on Windows
+  pool: Hosted Windows 2019 with VS2019
+  timeoutInMinutes: 60
+  cancelTimeoutInMinutes: 5
+  steps:
+  - task: NodeTool@0
+    displayName: install node 10.x
+    inputs:
+      versionSpec: 10.x
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - task: Npm@1
+    displayName: install mocha
+    inputs:
+      command: custom
+      customCommand: install -g mocha
+
+  - task: Npm@1
+    displayName: install tfx-cli
+    inputs:
+      command: custom
+      customCommand: install -g tfx-cli
+
+  - task: Npm@1
+    displayName: boots - npm install
+    inputs:
+      command: install
+      workingDir: $(BootsDir)
+
+  - script: tsc
+    displayName: boots - compile typescript
+    workingDirectory: $(BootsDir)
+
+  - script: mocha Tests\suite.js
+    displayName: boots - run tests
+    workingDirectory: $(BootsDir)
+
+  - script: tfx extension create --manifest-globs vss-extension.json --output-path $(Build.ArtifactStagingDirectory)
+    displayName: create tasks extension
+    workingDirectory: $(System.DefaultWorkingDirectory)\Tasks
+
+  - task: PublishPipelineArtifact@0
+    displayName: upload tasks extension
+    inputs:
+      artifactName: azp-tasks-extension
+      targetPath: $(Build.ArtifactStagingDirectory)
