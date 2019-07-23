@@ -1,2 +1,33 @@
-# azure-web-extensions
+# Azure DevOps Web Extensions
 Web extensions for Azure DevOps
+
+# Azure Pipeline Tasks
+[![Build Status](https://dev.azure.com/pjcollins/OSS/_apis/build/status/azure-web-extensions?branchName=master)](https://dev.azure.com/pjcollins/OSS/_build/latest?definitionId=1&branchName=master)
+
+## Use In Your YAML Pipeline
+TODO
+
+## Build and Test Locally
+#### Dependencies
+ * Install [Node](https://nodejs.org/).
+ * Install the TypeScript Compiler.
+    * `npm install -g typescript`
+
+#### Building
+Open a terminal and navigate to the task directory you want to work on, and run the following commands.
+ * `npm install`
+ * `tsc`
+
+#### Running
+Once a task is built, you can run it with `node`.
+ * `node boots.js`
+
+#### Testing
+If tests exist, they can be ran with `mocha`.
+ * `mocha Tests\suite.js`
+
+#### Packaging
+ * Install the TFS Cross Platform Command Line Interface.
+    * `npm i -g tfx-cli`
+ * Package the extension as a vsix.
+    * `tfx extension create --manifest-globs Tasks\vss-extension.json`

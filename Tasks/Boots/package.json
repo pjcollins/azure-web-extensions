@@ -8,5 +8,10 @@
   "dependencies": {
     "azure-pipelines-task-lib": "^2.8.0",
     "vss-web-extension-sdk": "^5.141.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.8",
+    "@types/q": "^1.5.2"
   }
 }
