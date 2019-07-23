@@ -1,0 +1,34 @@
+{
+    "manifestVersion": 1,
+    "id": "azp-utilities-boots",
+    "name": "Boots & Utilities",
+    "version": "0.1.0",
+    "publisher": "pjcollins",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Custom tasks for Azure Pipelines. Featuring Boots!",
+    "categories": [
+        "Azure Pipelines"
+    ],
+
+    "files": [
+        {
+            "path": "Boots"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "boots",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "Boots"
+            }
+        }
+    ]
+}

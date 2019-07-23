@@ -1,3 +1,19 @@
+.vscode
+[Tt]asks/**/*.js
+**/*.vsix
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+.vs/
+
+# Build results
+
+[Bb]in/
+[Oo]bj/
+temp/
+
 # Logs
 logs
 *.log
