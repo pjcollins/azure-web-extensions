@@ -6,8 +6,7 @@
   "author": "Peter Collins",
   "license": "MIT",
   "dependencies": {
-    "azure-pipelines-task-lib": "^2.8.0",
-    "vss-web-extension-sdk": "^5.141.0"
+    "azure-pipelines-task-lib": "^2.8.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
