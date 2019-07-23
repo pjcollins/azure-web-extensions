@@ -8,7 +8,7 @@
     "author": "Peter Collins",
     "version": {
         "Major": 0,
-        "Minor": 2,
+        "Minor": 5,
         "Patch": 0
     },
     "instanceNameFormat": "Install $(uri)",
