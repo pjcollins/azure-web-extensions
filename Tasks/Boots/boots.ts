@@ -2,12 +2,15 @@ import tl = require('azure-pipelines-task-lib/task');
 
 async function run() {
     try {
-        const fileToInstall: string = tl.getInput('file', true);
-        if (fileToInstall == 'this-file-does-not-exist.fakeextension') {
-            tl.setResult(tl.TaskResult.Failed, 'Bad input was given');
-            return;
-        }
-        console.log('File to install:', fileToInstall);
+        const uriToInstall: string = tl.getInput('uri', true);
+
+        var dotnet = tl.tool('dotnet');
+        dotnet.line('tool install --global boots --version 0.1.0.251-beta');
+        dotnet.exec();
+
+        var boots = tl.tool('boots');
+        boots.line(uriToInstall);
+        boots.exec();
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);

@@ -11,15 +11,15 @@
         "Minor": 1,
         "Patch": 0
     },
-    "instanceNameFormat": "Install $(file)",
+    "instanceNameFormat": "Install $(uri)",
     "inputs": [
         {
-            "name": "file",
+            "name": "uri",
             "type": "string",
-            "label": " Installer File(s)",
+            "label": " Installer Uri(s)",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Path to installer file(s). Accepts multiple space (' ') delimited values."
+            "helpMarkDown": "URI for installer file(s). Accepts multiple space (' ') delimited values."
         }
     ],
     "execution": {

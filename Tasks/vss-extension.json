@@ -13,7 +13,9 @@
     "categories": [
         "Azure Pipelines"
     ],
-
+    "icons": {
+        "default": "Images/boots.png"
+    },
     "files": [
         {
             "path": "Boots"
