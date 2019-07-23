@@ -14,6 +14,8 @@ TODO
     * `npm install -g typescript`
  * Install Mocha for testing.
     * `npm install -g mocha`
+ * Install tfx-cli for packaging.
+    * `npm install -g tfx-cli`
 
 #### Building
 Open a terminal and navigate to the task directory you want to work on, and run the following commands.
@@ -29,7 +31,5 @@ If tests exist, they can be ran with `mocha`.
  * `mocha Tests\suite.js`
 
 #### Packaging
- * Install the TFS Cross Platform Command Line Interface.
-    * `npm i -g tfx-cli`
- * Package the extension as a vsix.
+Run the following to package the extension as a vsix.
     * `tfx extension create --manifest-globs Tasks\vss-extension.json`

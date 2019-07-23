@@ -22,7 +22,13 @@ jobs:
     displayName: install mocha
     inputs:
       command: custom
-      customCommand: install mocha -g
+      customCommand: install -g mocha
+
+  - task: Npm@1
+    displayName: install tfx-cli
+    inputs:
+      command: custom
+      customCommand: install -g tfx-cli
 
   - task: Npm@1
     displayName: boots - npm install
