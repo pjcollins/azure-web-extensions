@@ -32,4 +32,4 @@ If tests exist, they can be ran with `mocha`.
 
 #### Packaging
 Run the following to package the extension as a vsix.
-    * `tfx extension create --manifest-globs Tasks\vss-extension.json`
+ * `tfx extension create --manifest-globs Tasks\vss-extension.json`
