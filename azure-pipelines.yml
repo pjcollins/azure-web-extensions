@@ -10,8 +10,7 @@ jobs:
 - job: build_test_win
   displayName: Build and Test on Windows
   pool: Hosted Windows 2019 with VS2019
-  timeoutInMinutes: 60
-  cancelTimeoutInMinutes: 5
+  timeoutInMinutes: 30
   steps:
   - task: NodeTool@0
     displayName: install node 10.x
@@ -53,3 +52,23 @@ jobs:
     inputs:
       artifactName: azp-tasks-extension
       targetPath: $(Build.ArtifactStagingDirectory)
+
+- job: run_boots_win
+  displayName: Run Boots on Windows
+  pool: Hosted Windows 2019 with VS2019
+  timeoutInMinutes: 30
+  steps:
+  - task: Boots@0
+    displayName: Install Project System Tools with Boots
+    inputs:
+      uri: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioProductTeam/vsextensions/ProjectSystemTools/1.0.1.1927902/vspackage
+
+- job: run_boots_mac
+  displayName: Run Boots on Mac
+  pool: Hosted macOS
+  timeoutInMinutes: 30
+  steps:
+  - task: Boots@0
+    displayName: Install Xamarin.Android with Boots
+    inputs:
+      uri: https://aka.ms/xamarin-android-commercial-d16-2-macos
