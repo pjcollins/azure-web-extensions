@@ -5,7 +5,18 @@ Web extensions for Azure DevOps
 [![Build Status](https://dev.azure.com/pjcollins/OSS/_apis/build/status/azure-web-extensions?branchName=master)](https://dev.azure.com/pjcollins/OSS/_build/latest?definitionId=1&branchName=master)
 
 ## Use In Your YAML Pipeline
-TODO
+##### Ensure the extension is installed in your Azure DevOps instance
+ * From your organization control panel (https://dev.azure.com/{organization}/_settings/extensions), go to the project collection administration page.
+ * Find the extension in the "Extensions Shared With Me" section or the marketplace and install it.
+ 
+##### Add the task to a build or release, or use it from YAML
+```yaml
+steps:
+- task: Boots@0
+  displayName: Install Xamarin.Android
+  inputs:
+    uri: https://aka.ms/xamarin-android-commercial-d16-2-windows
+```
 
 ## Build and Test Locally
 #### Dependencies
