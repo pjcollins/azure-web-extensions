@@ -6,11 +6,11 @@ async function run() {
 
         var dotnet = tl.tool('dotnet');
         dotnet.line('tool install --global boots --version 0.1.0.251-beta');
-        dotnet.exec();
+        await dotnet.exec();
 
         var boots = tl.tool('boots');
         boots.line(uriToInstall);
-        boots.exec();
+        await boots.exec();
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);
