@@ -53,8 +53,18 @@ jobs:
       artifactName: azp-tasks-extension
       targetPath: $(Build.ArtifactStagingDirectory)
 
+
+- job: manual_test_gate
+  displayName: Manual Test Gate
+  server: true
+  steps:
+  - task: ManualIntervention@8
+    displayName: Wait For Manual Approval
+    timeoutInMinutes: 30
+
 - job: run_boots_win
   displayName: Run Boots on Windows
+  dependsOn: manual_test_gate
   pool: Hosted Windows 2019 with VS2019
   timeoutInMinutes: 30
   steps:
@@ -65,6 +75,7 @@ jobs:
 
 - job: run_boots_mac
   displayName: Run Boots on Mac
+  dependsOn: manual_test_gate
   pool: Hosted macOS
   timeoutInMinutes: 30
   steps:
