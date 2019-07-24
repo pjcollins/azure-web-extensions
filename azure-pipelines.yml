@@ -56,7 +56,7 @@ jobs:
 
 - job: manual_test_gate
   displayName: Manual Test Gate
-  server: true
+  pool: server
   steps:
   - task: ManualIntervention@8
     displayName: Wait For Manual Approval
