@@ -5,10 +5,10 @@
     "description": "Installs any supported payload type (e.g. .vsix, .pkg).",
     "helpMarkDown": "",
     "category": "Utility",
-    "author": "Peter Collins",
+    "author": "Peter Collins, Jonathan Peppers",
     "version": {
         "Major": 0,
-        "Minor": 5,
+        "Minor": 8,
         "Patch": 0
     },
     "instanceNameFormat": "Install $(uri)",
