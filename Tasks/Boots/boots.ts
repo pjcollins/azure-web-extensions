@@ -1,6 +1,6 @@
 import tl = require('azure-pipelines-task-lib/task');
 import path = require('path');
-import { readlink } from 'fs';
+import { readlinkSync } from 'fs';
 
 async function run() {
     try {
@@ -21,12 +21,15 @@ async function run() {
         // Workaround error 'the required library libhostfxr.dylib could not be found.'
         // https://github.com/dotnet/cli/issues/9114#issuecomment-494226139
         if (tl.getPlatform() === tl.Platform.MacOS) {
-            await readlink(dotnetTool, (err, linkString) : void => {
-                if (linkString) {
-                    tl.setVariable("DOTNET_ROOT", path.dirname(linkString));
+            try {
+                var dotnetToolLink = readlinkSync(dotnetTool);
+                if (typeof dotnetToolLink == 'string') {
+                    tl.setVariable("DOTNET_ROOT", path.dirname(dotnetToolLink));
                 }
-            });
+            } catch (err) {
+            }
         }
+
         var boots = tl.tool(bootsTool);
         boots.line(uriToInstall);
         await boots.exec();

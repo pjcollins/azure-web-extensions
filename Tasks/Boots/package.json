@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Azure Pipelines Boots Task",
   "main": "boots.js",
-  "author": "Peter Collins",
+  "author": "Peter Collins, Jonathan Peppers",
   "license": "MIT",
   "dependencies": {
     "azure-pipelines-task-lib": "^2.8.0"
