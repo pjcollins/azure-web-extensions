@@ -1,6 +1,8 @@
 .vscode
 [Tt]asks/**/*.js
 **/*.vsix
+**.DS_Store
+**.taskkey
 
 # User-specific files
 *.suo

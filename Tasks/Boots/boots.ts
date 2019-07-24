@@ -5,15 +5,23 @@ import { readlinkSync } from 'fs';
 async function run() {
     try {
         const uriToInstall: string = tl.getInput('uri', true);
+        const packageVersion: string = tl.getInput('version', false);
+
+        var bootsSuffix = 'tool';
+        var versionArgs = '';
+        if (packageVersion) {
+            bootsSuffix = packageVersion;
+            versionArgs = ' --version=' + packageVersion;
+        }
 
         var tmpDir = tl.getVariable('Agent.TempDirectory');
-        var bootsToolDir = path.join(tmpDir, 'boots-tool');
+        var bootsToolDir = path.join(tmpDir, 'boots-' + bootsSuffix);
         var bootsTool = tl.which(path.join(bootsToolDir, 'boots'));
         var dotnetTool = tl.which('dotnet');
 
         if (!bootsTool) {
             var dotnet = tl.tool(dotnetTool);
-            dotnet.line('tool install boots --version 0.1.0.251-beta --tool-path ' + bootsToolDir);
+            dotnet.line('tool install boots --tool-path=\"' + bootsToolDir + '\"' + versionArgs);
             await dotnet.exec();
             bootsTool = tl.which(path.join(bootsToolDir, 'boots'));
         }
