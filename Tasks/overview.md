@@ -8,7 +8,7 @@ Once you've installed this extension, the `Boots` task can be added to an Azure 
 
 ```yaml
 steps:
-- task: Boots@0
+- task: Boots@1
   displayName: Install Xamarin.Android
   inputs:
     uri: https://aka.ms/xamarin-android-commercial-d16-2-windows

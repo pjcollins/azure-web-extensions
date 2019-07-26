@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "azp-utilities-boots",
     "name": "Boots & Utilities",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "pjcollins",
     "public": true,
     "targets": [

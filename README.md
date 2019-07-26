@@ -12,7 +12,7 @@ Web extensions for Azure DevOps
 ##### Add the task to a build or release, or use it from YAML
 ```yaml
 steps:
-- task: Boots@0
+- task: Boots@1
   displayName: Install Xamarin.Android
   inputs:
     uri: https://aka.ms/xamarin-android-commercial-d16-2-windows

@@ -58,7 +58,7 @@ jobs:
   pool: Hosted Windows 2019 with VS2019
   timeoutInMinutes: 30
   steps:
-  - task: Boots@0
+  - task: Boots@1
     displayName: Install Project System Tools with Boots
     inputs:
       uri: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioProductTeam/vsextensions/ProjectSystemTools/1.0.1.1927902/vspackage
@@ -68,7 +68,7 @@ jobs:
   pool: Hosted macOS
   timeoutInMinutes: 30
   steps:
-  - task: Boots@0
+  - task: Boots@1
     displayName: Install Xamarin.Android with Boots
     inputs:
       uri: https://aka.ms/xamarin-android-commercial-d16-2-macos
