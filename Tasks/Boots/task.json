@@ -7,8 +7,8 @@
     "category": "Utility",
     "author": "Peter Collins, Jonathan Peppers",
     "version": {
-        "Major": 0,
-        "Minor": 9,
+        "Major": 1,
+        "Minor": 0,
         "Patch": 0
     },
     "instanceNameFormat": "Install $(uri)",
