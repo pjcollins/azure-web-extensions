@@ -6,8 +6,7 @@ Web extensions for Azure DevOps
 
 ## Use In Your YAML Pipeline
 ##### Ensure the extension is installed in your Azure DevOps instance
- * Visit the [Marketplace](https://marketplace.visualstudio.com/items?itemName=pjcollins.azp-utilities-boots) and install
- the extension.
+ * Visit the [Marketplace](https://marketplace.visualstudio.com/items?itemName=pjcollins.azp-utilities-boots) and install the extension.
  
 ##### Add the task to a build or release, or use it from YAML
 ```yaml
