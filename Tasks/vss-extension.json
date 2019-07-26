@@ -4,6 +4,7 @@
     "name": "Boots & Utilities",
     "version": "1.0.0",
     "publisher": "pjcollins",
+    "public": true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
