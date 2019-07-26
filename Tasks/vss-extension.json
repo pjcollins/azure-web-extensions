@@ -22,6 +22,11 @@
             "path": "Boots"
         }
     ],
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
     "contributions": [
         {
             "id": "boots",
