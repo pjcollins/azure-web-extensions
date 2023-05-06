@@ -6,7 +6,7 @@
   "author": "Peter Collins, Jonathan Peppers",
   "license": "MIT",
   "dependencies": {
-    "azure-pipelines-task-lib": "^2.8.0"
+    "azure-pipelines-task-lib": "^4.3.1"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
